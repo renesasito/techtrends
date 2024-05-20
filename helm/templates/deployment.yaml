@@ -3,15 +3,13 @@ kind: Deployment
 metadata:
   labels:
     app: techtrends
-    tag: latest
-  name: techtrends-latest
+  name: techtrends
   namespace: sandbox
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: techtrends
-      tag: latest
   strategy:
     rollingUpdate:
       maxSurge: 50%
@@ -21,9 +19,12 @@ spec:
     metadata:
       labels:
         app: techtrends
-        tag: latest
     spec:
       containers:
-      - image: techtrends:latest
+      - image: renesasito/techtrends:latest
         imagePullPolicy: IfNotPresent
         name: techtrends
+        resources:
+          requests:
+            cpu: 250m
+            memory: 64Mi
