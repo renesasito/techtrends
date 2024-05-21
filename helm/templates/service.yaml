@@ -9,7 +9,7 @@ spec:
   ports:
   - port: {{ .Values.service.port }} 
     protocol: TCP
-    targetPort:  {{ .Values.service.port }}
+    targetPort:  {{ .Values.service.targetport }}
   selector:
     app: techtrends
-  type: {{ .Values.service.type }}
+  type: ClusterIP

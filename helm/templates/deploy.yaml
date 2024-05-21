@@ -12,8 +12,6 @@ spec:
       app: techtrends
   strategy:
     rollingUpdate:
-      maxSurge: 50%
-      maxUnavailable: 50%
     type: RollingUpdate
   template:
     metadata:
@@ -24,7 +22,20 @@ spec:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: techtrends
+        ports:
+        - containerPort: 3111
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
         resources:
           requests:
-            cpu: 250m
-            memory: 64Mi
+            cpu: {{ .Values.requests.cpu }}
+            memory: {{ .Values.limits.memory }}
+          limits:
+            cpu: {{ .Values.requests.cpu }}
+            memory: {{ .Values.limits.memory }}
