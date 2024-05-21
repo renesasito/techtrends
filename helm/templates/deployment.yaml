@@ -4,9 +4,9 @@ metadata:
   labels:
     app: techtrends
   name: techtrends
-  namespace: sandbox
+  namespace: {{ .Values.namespace.name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: techtrends
@@ -21,8 +21,8 @@ spec:
         app: techtrends
     spec:
       containers:
-      - image: renesasito/techtrends:latest
-        imagePullPolicy: IfNotPresent
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: techtrends
         resources:
           requests:
