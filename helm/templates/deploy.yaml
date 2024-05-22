@@ -34,8 +34,8 @@ spec:
             port: 3111
         resources:
           requests:
-            cpu: {{ .Values.requests.cpu }}
-            memory: {{ .Values.limits.memory }}
+            cpu: {{ .Values.resources.requests.cpu }}
+            memory: {{ .Values.resources.requests.memory }}
           limits:
-            cpu: {{ .Values.requests.cpu }}
-            memory: {{ .Values.limits.memory }}
+            cpu: {{ .Values.resources.limits.cpu }}
+            memory: {{ .Values.resources.limits.memory }}
