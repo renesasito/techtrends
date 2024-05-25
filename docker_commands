@@ -9,22 +9,40 @@ docker run -d -p 7111:3111 techtrends
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
 docker ps
-docker logs -f ac1b7277e949
+docker logs -f d3ca1a6c169b
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
+s-ito@REL-0063620:~/udacity/cloud_native/nd064_course_1/project$ docker logs -f d3ca1a6c169b
  * Serving Flask app 'app' (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
  * Debug mode: off
- * Running on all addresses.
+WARNING:werkzeug:2024-05-25 00:44:21,977 -  * Running on all addresses.
    WARNING: This is a development server. Do not use it in a production deployment.
- * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
-172.17.0.1 - - [20/May/2024 13:26:45] "GET / HTTP/1.1" 200 -
-172.17.0.1 - - [20/May/2024 13:26:45] "GET /static/css/main.css HTTP/1.1" 304 -
-172.17.0.1 - - [20/May/2024 13:27:02] "GET /1 HTTP/1.1" 200 -
-172.17.0.1 - - [20/May/2024 13:27:02] "GET /static/css/main.css HTTP/1.1" 304 -
-172.17.0.1 - - [20/May/2024 13:27:10] "GET /2 HTTP/1.1" 200 -
-172.17.0.1 - - [20/May/2024 13:27:10] "GET /static/css/main.css HTTP/1.1" 304 -
-172.17.0.1 - - [20/May/2024 13:27:24] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:2024-05-25 00:44:21,978 -  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:2024-05-25 00:44:51,566 - 172.17.0.1 - - [25/May/2024 00:44:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2024-05-25 00:44:51,584 - 172.17.0.1 - - [25/May/2024 00:44:51] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2024-05-25 00:44:51,647 - 172.17.0.1 - - [25/May/2024 00:44:51] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:app:2024-05-25 00:46:01,785 - Article "2020 CNCF Annual Report" is accessed
+INFO:werkzeug:2024-05-25 00:46:01,790 - 172.17.0.1 - - [25/May/2024 00:46:01] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:2024-05-25 00:46:01,817 - 172.17.0.1 - - [25/May/2024 00:46:01] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2024-05-25 00:46:12,322 - non-existing article is accessed
+INFO:werkzeug:2024-05-25 00:46:12,325 - 172.17.0.1 - - [25/May/2024 00:46:12] "GET /7 HTTP/1.1" 404 -
+INFO:werkzeug:2024-05-25 00:46:12,343 - 172.17.0.1 - - [25/May/2024 00:46:12] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2024-05-25 00:46:15,525 - "About Us" page is accessed
+INFO:werkzeug:2024-05-25 00:46:15,528 - 172.17.0.1 - - [25/May/2024 00:46:15] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2024-05-25 00:46:15,541 - 172.17.0.1 - - [25/May/2024 00:46:15] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2024-05-25 00:46:27,126 - 172.17.0.1 - - [25/May/2024 00:46:27] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2024-05-25 00:46:27,139 - 172.17.0.1 - - [25/May/2024 00:46:27] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2024-05-25 00:46:42,087 - 172.17.0.1 - - [25/May/2024 00:46:42] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:2024-05-25 00:46:42,101 - 172.17.0.1 - - [25/May/2024 00:46:42] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2024-05-25 00:46:52,213 - "new" article is created
+INFO:werkzeug:2024-05-25 00:46:52,214 - 172.17.0.1 - - [25/May/2024 00:46:52] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:2024-05-25 00:46:52,222 - 172.17.0.1 - - [25/May/2024 00:46:52] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2024-05-25 00:46:52,238 - 172.17.0.1 - - [25/May/2024 00:46:52] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2024-05-25 00:47:05,860 - 172.17.0.1 - - [25/May/2024 00:47:05] "GET /metrics HTTP/1.1" 200 -
+INFO:app:2024-05-25 00:47:20,140 - "About Us" page is accessed
+INFO:werkzeug:2024-05-25 00:47:20,141 - 172.17.0.1 - - [25/May/2024 00:47:20] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2024-05-25 00:47:20,151 - 172.17.0.1 - - [25/May/2024 00:47:20] "GET /static/css/main.css HTTP/1.1" 304 -

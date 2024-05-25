@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: v1
 kind: Deployment
 metadata:
   labels:
@@ -26,12 +26,12 @@ spec:
         - containerPort: 3111
         livenessProbe:
           httpGet:
-            path: /healthz
-            port: 3111
+            path: {{ .Values.ports.livenessProbe.httpGet.path }}
+            port: {{ .Values.ports.containerPort }}
         readinessProbe:
           httpGet:
-            path: /healthz
-            port: 3111
+            path: {{ .Values.ports.readinessProbe.httpGet.path }}
+            port: {{ .Values.ports.containerPort }}
         resources:
           requests:
             cpu: {{ .Values.resources.requests.cpu }}

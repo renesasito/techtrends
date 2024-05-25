@@ -4,7 +4,7 @@ namespace:
 service:
   port: 7111
   targetPort: 3111
-  protcol: TCP
+  protocol : TCP
   type: ClusterIP
 
 image:
