@@ -23,7 +23,7 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: techtrends
         ports:
-        - containerPort: 3111
+          containerPort: 3111
         livenessProbe:
           httpGet:
             path: {{ .Values.livenessProbe.httpGet.path }}
